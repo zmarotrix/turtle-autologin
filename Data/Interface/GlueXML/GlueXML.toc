@@ -1,3 +1,4 @@
+GlueConstants.lua
 GlueStrings.lua
 GlueFonts.xml
 GlueLocalization.xml
@@ -20,5 +21,5 @@ RealmWizard.xml
 CreditsFrame.xml
 ChallengeList.xml
 
-# Autologin 2.2.3
+# Autologin 2.3.1
 AutoLogin.xml

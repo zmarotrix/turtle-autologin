@@ -54,7 +54,7 @@ L["ruRU"] = {
 
 L = L[GetLocale()] or L["enUS"]
 
-local has_superwow = SUPERWOW_VERSION and tonumber(SUPERWOW_VERSION) >= 1.4
+local has_superwow = (ImportFile and ExportFile) or (SUPERWOW_VERSION and tonumber(SUPERWOW_VERSION) >= 1.4)
 
 if not has_superwow then
   GlueDialogTypes["AL_NO_SWOW"] = {
