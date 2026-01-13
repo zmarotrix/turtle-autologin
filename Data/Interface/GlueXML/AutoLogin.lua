@@ -750,10 +750,23 @@ function LoginManager:OnCharactersLoad()
           return ra < rb
         end)
 
-        CharacterSelect_SelectCharacter(saved_chars.last or 1)
+        -- FIX START: Validate index before selecting to prevent jumping to Create Screen
+        local numChars = GetNumCharacters()
+        local charIndex = saved_chars.last or 1
+        
+        if charIndex > numChars then 
+            charIndex = numChars 
+        end
+        
+        if numChars > 0 then
+            CharacterSelect_SelectCharacter(charIndex)
+        end
+        
         if self.auto_char_button_pressed then
+          self.auto_char_button_pressed = false -- Reset the flag so it doesn't trigger on deletion updates
           EnterWorld()
         end
+        -- FIX END
 
         break
       end
